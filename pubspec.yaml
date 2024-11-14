@@ -1,10 +1,10 @@
 name: awesome_snackbar_content
 description: "Beautiful content of a snack bar and material banner."
-version: 1.0.0+1
+version: 1.0.0+2
 #homepage:
 
 environment:
-  sdk: ^3.5.3
+  sdk: ^3.5.2
   flutter: ">=1.17.0"
 
 dependencies:
