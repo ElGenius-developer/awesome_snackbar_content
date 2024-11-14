@@ -1,0 +1,25 @@
+name: awesome_snackbar_content
+description: "Beautiful content of a snack bar and material banner."
+version: 1.0.0+1
+#homepage:
+
+environment:
+  sdk: ^3.5.3
+  flutter: ">=1.17.0"
+
+dependencies:
+  custom_sizable_text: ^1.1.5+6
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.14
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+
+   assets:
+     - assets/
+     - assets/types/
