@@ -37,9 +37,17 @@ class AwesomeSnackbarContent extends StatefulWidget {
 
   /// if you want to customize the font style of the message
   final TextStyle? messageTextStyle;
-
+  ///message text align
+  final TextAlign? messageTextAlign;
+  ///message text direction
+  final TextDirection? messageTextDirection;
+  /// message max lines
+  final int? messageMaxLines;
   const AwesomeSnackbarContent({
     super.key,
+    this.messageTextAlign,
+    this.messageTextDirection,
+    this.messageMaxLines,
     this.color,
     this.titleTextStyle,
     this.messageTextStyle,
@@ -181,6 +189,7 @@ class _AwesomeSnackbarContentState extends State<AwesomeSnackbarContent> {
                         child: CustomText(
                           widget.title,
                           textOverflow: TextOverflow.visible,
+                          
                           textStyle: widget.titleTextStyle ??
                               TextStyle(
                                 fontSize: (!isMobile ? size.height * 0.03 : size.height * 0.025),
@@ -216,6 +225,9 @@ class _AwesomeSnackbarContentState extends State<AwesomeSnackbarContent> {
                     child: CustomText(
                       widget.message,
                       textOverflow: TextOverflow.visible,
+                      textAlign: widget.messageTextAlign,
+                      textDirection: widget.messageTextDirection,
+                      maxLines: widget.messageMaxLines,
                       textStyle: widget.messageTextStyle ??
                           TextStyle(
                             fontSize: size.height * 0.016,
