@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 
 class AweseomSnackBarExample extends StatelessWidget {
-  const AweseomSnackBarExample({Key? key}) : super(key: key);
+  const AweseomSnackBarExample({super.key});
 
   @override
   Widget build(BuildContext context) {
