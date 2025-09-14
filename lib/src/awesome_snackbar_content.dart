@@ -35,12 +35,18 @@ class AwesomeSnackbarContent extends StatefulWidget {
   /// if you want to customize the font style of the title
   final TextStyle? titleTextStyle;
 
+  /// callback when close button is pressed
+  final VoidCallback? onCloseButtonPressed;
+
   /// if you want to customize the font style of the message
   final TextStyle? messageTextStyle;
+
   ///message text align
   final TextAlign? messageTextAlign;
+
   ///message text direction
   final TextDirection? messageTextDirection;
+
   /// message max lines
   final int? messageMaxLines;
   const AwesomeSnackbarContent({
@@ -51,6 +57,7 @@ class AwesomeSnackbarContent extends StatefulWidget {
     this.color,
     this.titleTextStyle,
     this.messageTextStyle,
+    this.onCloseButtonPressed,
     required this.title,
     required this.message,
     required this.contentType,
@@ -189,7 +196,6 @@ class _AwesomeSnackbarContentState extends State<AwesomeSnackbarContent> {
                         child: CustomText(
                           widget.title,
                           textOverflow: TextOverflow.visible,
-                          
                           textStyle: widget.titleTextStyle ??
                               TextStyle(
                                 fontSize: (!isMobile ? size.height * 0.03 : size.height * 0.025),
@@ -201,6 +207,10 @@ class _AwesomeSnackbarContentState extends State<AwesomeSnackbarContent> {
                     ),
                     IconButton(
                       onPressed: () {
+                        if (widget.onCloseButtonPressed != null) {
+                          widget.onCloseButtonPressed!();
+                          return;
+                        }
                         if (widget.inMaterialBanner) {
                           ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
                           return;
